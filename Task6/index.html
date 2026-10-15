@@ -1,0 +1,87 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task6</title>
+</head>
+<body>
+
+    <button onclick="remove_divisible_by_three()">Button one</button>
+    <button onclick="add_more()">Button two</button>
+    <button onclick="add_three()">Button three</button>
+    <button onclick="print_part()">Button four</button>
+    <button onclick="shuffle_sort()">Button five</button>
+
+    <script>
+        function create_array() {
+            const numbers = [];
+
+            for (let i = 0; i <= 100; i++) {
+                numbers.push(i);
+            }
+
+            return numbers;
+        }
+
+        function remove_divisible_by_three() {
+            const numbers = create_array();
+
+            const filtered_numbers = numbers.filter(function(number) {
+                return number % 3 !== 0;
+            });
+
+            console.log(filtered_numbers);
+        }
+
+        function add_more() {
+            const numbers = create_array();
+
+            for (let i = 101; i <= 150; i++) {
+                numbers.push(i);
+            }
+
+            console.log(numbers);
+        }
+
+        function add_three() {
+            const numbers = create_array();
+
+            const new_numbers = numbers.map(function(number) {
+                return number + 3;
+            });
+
+            console.log(new_numbers);
+        }
+
+        function print_part() {
+            const numbers = create_array();
+
+            console.log(numbers.slice(20, 41));
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function shuffle_sort() {
+            const numbers = create_array();
+
+            shuffleArray(numbers);
+            console.log(numbers);
+
+            numbers.sort(function(a, b) {
+                return b - a;
+            });
+
+            console.log(numbers);
+        }
+    </script>
+
+</body>
+</html>
