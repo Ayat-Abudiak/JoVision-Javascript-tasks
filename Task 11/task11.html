@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task11</title>
+</head>
+<body>
+
+    <button onclick="get_ip()">Get ip</button>
+
+    <script>
+        const get_ip = () => {
+            const button = document.querySelector("button");
+
+            fetch("https://api.ipify.org/")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Wrong URL");
+                    }
+
+                    return response.text();
+                })
+                .then(ip => {
+                    button.textContent = ip;
+                })
+                .catch(error => {
+                    alert(error.message);
+                });
+        };
+    </script>
+
+</body>
+</html>
