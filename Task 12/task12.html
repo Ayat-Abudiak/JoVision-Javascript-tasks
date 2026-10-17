@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task12</title>
+</head>
+<body>
+
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="age" placeholder="Age">
+
+    <button onclick="submit_data()">Submit</button>
+
+    <script>
+        function submit_data() {
+            const data = {
+                name: document.getElementById("name").value,
+                age: document.getElementById("age").value,
+                timestamp: new Date().toLocaleString()
+            };
+
+            const { name, age, timestamp } = data;
+
+            alert(
+                "Your name is: " + name +
+                "\nYour age is: " + age +
+                "\nTimestamp: " + timestamp
+            );
+        }
+    </script>
+
+</body>
+</html>
